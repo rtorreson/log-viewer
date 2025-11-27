@@ -72,7 +72,7 @@ function formatJson(obj: unknown): string {
         <!-- Source -->
         <div v-if="selectedEntry.source">
           <label class="text-xs text-[var(--log-text-muted)] uppercase tracking-wider">Source</label>
-          <div class="mt-1 font-mono text-sm bg-[var(--log-bg)] p-3 rounded-lg text-purple-400">
+          <div class="mt-1 font-mono text-sm bg-[var(--log-bg)] p-3 rounded-lg text-[#00DC82]">
             {{ selectedEntry.source }}
           </div>
         </div>
@@ -82,7 +82,7 @@ function formatJson(obj: unknown): string {
           <div class="flex items-center justify-between">
             <label class="text-xs text-[var(--log-text-muted)] uppercase tracking-wider">Mensagem</label>
             <button
-              class="text-xs text-blue-400 hover:text-blue-300"
+              class="text-xs text-[#00DC82] hover:text-[#36e89e]"
               @click="copyToClipboard(selectedEntry.message)"
             >
               Copiar
@@ -98,7 +98,7 @@ function formatJson(obj: unknown): string {
           <div class="flex items-center justify-between">
             <label class="text-xs text-[var(--log-text-muted)] uppercase tracking-wider">Dados</label>
             <button
-              class="text-xs text-blue-400 hover:text-blue-300"
+              class="text-xs text-[#00DC82] hover:text-[#36e89e]"
               @click="copyToClipboard(formatJson(selectedEntry.metadata))"
             >
               Copiar JSON
@@ -114,7 +114,7 @@ function formatJson(obj: unknown): string {
           <div class="flex items-center justify-between">
             <label class="text-xs text-[var(--log-text-muted)] uppercase tracking-wider">Linha Original</label>
             <button
-              class="text-xs text-blue-400 hover:text-blue-300"
+              class="text-xs text-[#00DC82] hover:text-[#36e89e]"
               @click="copyToClipboard(selectedEntry.rawLine)"
             >
               Copiar

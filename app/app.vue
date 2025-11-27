@@ -21,10 +21,10 @@ async function handleFileSelected(file: File) {
             <LogStats />
           </div>
           <div v-else class="flex items-center gap-3">
-            <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center">
-              <UIcon name="i-heroicons-document-text" class="w-4 h-4 text-white" />
+            <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-[#00DC82] to-[#00b368] flex items-center justify-center">
+              <UIcon name="i-heroicons-document-text" class="w-4 h-4 text-[#0a0a0f]" />
             </div>
-            <h1 class="text-xl font-semibold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+            <h1 class="text-xl font-semibold bg-gradient-to-r from-[#00DC82] to-[#36e89e] bg-clip-text text-transparent">
               Log Viewer
             </h1>
           </div>

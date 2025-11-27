@@ -58,7 +58,7 @@ watch(() => filteredEntries.value.length, () => {
       class="absolute inset-0 bg-[var(--log-bg)]/80 flex items-center justify-center z-10 rounded-xl"
     >
       <div class="flex flex-col items-center gap-4">
-        <UIcon name="i-heroicons-arrow-path" class="w-8 h-8 text-blue-400 animate-spin" />
+        <UIcon name="i-heroicons-arrow-path" class="w-8 h-8 text-[#00DC82] animate-spin" />
         <span class="text-[var(--log-text-muted)]">Processando logs...</span>
       </div>
     </div>
@@ -93,7 +93,7 @@ watch(() => filteredEntries.value.length, () => {
       
       <div v-if="hasMore" class="py-4 text-center">
         <button
-          class="px-4 py-2 text-sm text-blue-400 hover:text-blue-300 flex items-center gap-2 mx-auto"
+          class="px-4 py-2 text-sm text-[#00DC82] hover:text-[#36e89e] flex items-center gap-2 mx-auto"
           :disabled="isLoadingMore"
           @click="loadMore"
         >
@@ -105,18 +105,18 @@ watch(() => filteredEntries.value.length, () => {
 
     <div class="absolute right-4 bottom-4 flex flex-col gap-2">
       <button
-        class="p-2 bg-[var(--log-surface-2)] hover:bg-[var(--log-border)] rounded-lg transition-colors shadow-lg"
+        class="p-2 bg-[var(--log-surface-2)] hover:bg-[#00DC82]/20 rounded-lg transition-colors shadow-lg group"
         title="Ir para o topo"
         @click="scrollToTop"
       >
-        <UIcon name="i-heroicons-chevron-double-up" class="w-5 h-5 text-[var(--log-text-muted)]" />
+        <UIcon name="i-heroicons-chevron-double-up" class="w-5 h-5 text-[var(--log-text-muted)] group-hover:text-[#00DC82]" />
       </button>
       <button
-        class="p-2 bg-[var(--log-surface-2)] hover:bg-[var(--log-border)] rounded-lg transition-colors shadow-lg"
+        class="p-2 bg-[var(--log-surface-2)] hover:bg-[#00DC82]/20 rounded-lg transition-colors shadow-lg group"
         title="Ir para o final"
         @click="scrollToBottom"
       >
-        <UIcon name="i-heroicons-chevron-double-down" class="w-5 h-5 text-[var(--log-text-muted)]" />
+        <UIcon name="i-heroicons-chevron-double-down" class="w-5 h-5 text-[var(--log-text-muted)] group-hover:text-[#00DC82]" />
       </button>
     </div>
 
