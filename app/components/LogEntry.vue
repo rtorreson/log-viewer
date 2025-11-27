@@ -46,7 +46,7 @@ function highlightSearch(text: string, search?: string): string {
   const searchEscaped = escapeHtml(search)
   const regex = new RegExp(`(${escapeRegex(searchEscaped)})`, 'gi')
   
-  return escaped.replace(regex, '<mark class="bg-yellow-500/40 text-yellow-200 rounded px-0.5">$1</mark>')
+  return escaped.replace(regex, '<mark class="bg-[#00DC82]/30 text-[#36e89e] rounded px-0.5">$1</mark>')
 }
 
 function escapeHtml(text: string): string {
@@ -86,7 +86,7 @@ function formatJson(obj: Record<string, unknown>): string {
       </span>
 
       <!-- Source -->
-      <span v-if="entry.source" class="text-purple-400 font-mono text-sm shrink-0 max-w-[150px] truncate">
+      <span v-if="entry.source" class="text-[#00DC82] font-mono text-sm shrink-0 max-w-[150px] truncate">
         {{ entry.source }}
       </span>
 
