@@ -1,0 +1,284 @@
+@import "tailwindcss";
+@import "@nuxt/ui";
+
+:root {
+  --font-sans: 'Outfit', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  
+  /* Nuxt green primary color */
+  --nuxt-green: #00DC82;
+  --nuxt-green-dark: #00b368;
+  --nuxt-green-light: #36e89e;
+  --nuxt-green-bg: rgba(0, 220, 130, 0.1);
+  --nuxt-green-bg-hover: rgba(0, 220, 130, 0.15);
+  
+  /* Custom color palette */
+  --log-bg: #0a0a0f;
+  --log-surface: #12121a;
+  --log-surface-2: #1a1a25;
+  --log-border: #2a2a3a;
+  --log-text: #e0e0e8;
+  --log-text-muted: #8888a0;
+  
+  /* Primary color (Nuxt green) */
+  --primary: var(--nuxt-green);
+  --primary-hover: var(--nuxt-green-light);
+  --primary-bg: var(--nuxt-green-bg);
+  
+  /* Log level colors */
+  --log-error: #ff4757;
+  --log-error-bg: rgba(255, 71, 87, 0.1);
+  --log-warn: #ffa502;
+  --log-warn-bg: rgba(255, 165, 2, 0.1);
+  --log-info: #3b82f6;
+  --log-info-bg: rgba(59, 130, 246, 0.1);
+  --log-debug: #a855f7;
+  --log-debug-bg: rgba(168, 85, 247, 0.1);
+  --log-trace: #6b7280;
+  --log-trace-bg: rgba(107, 114, 128, 0.1);
+  --log-success: #10b981;
+  --log-success-bg: rgba(16, 185, 129, 0.1);
+}
+
+html {
+  font-family: var(--font-sans);
+}
+
+body {
+  background: var(--log-bg);
+  color: var(--log-text);
+  min-height: 100vh;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--log-surface);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--log-border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3a3a4a;
+}
+
+/* Log entry styles */
+.log-entry {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  line-height: 1.6;
+  padding: 8px 16px;
+  border-left: 3px solid transparent;
+  transition: all 0.15s ease;
+}
+
+.log-entry:hover {
+  background: var(--log-surface-2);
+}
+
+.log-entry.level-error {
+  border-left-color: var(--log-error);
+  background: var(--log-error-bg);
+}
+
+.log-entry.level-warn {
+  border-left-color: var(--log-warn);
+  background: var(--log-warn-bg);
+}
+
+.log-entry.level-info {
+  border-left-color: var(--log-info);
+}
+
+.log-entry.level-debug {
+  border-left-color: var(--log-debug);
+}
+
+.log-entry.level-trace {
+  border-left-color: var(--log-trace);
+}
+
+.log-entry.level-success {
+  border-left-color: var(--log-success);
+}
+
+/* Badge styles */
+.level-badge {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.level-badge.error {
+  background: var(--log-error);
+  color: white;
+}
+
+.level-badge.warn {
+  background: var(--log-warn);
+  color: #1a1a25;
+}
+
+.level-badge.info {
+  background: var(--log-info);
+  color: white;
+}
+
+.level-badge.debug {
+  background: var(--log-debug);
+  color: white;
+}
+
+.level-badge.trace {
+  background: var(--log-trace);
+  color: white;
+}
+
+.level-badge.success {
+  background: var(--log-success);
+  color: white;
+}
+
+/* Timestamp style */
+.log-timestamp {
+  color: var(--log-text-muted);
+  font-family: var(--font-mono);
+  font-size: 12px;
+}
+
+/* Upload dropzone */
+.dropzone {
+  border: 2px dashed var(--log-border);
+  border-radius: 16px;
+  transition: all 0.3s ease;
+  background: linear-gradient(135deg, var(--log-surface) 0%, var(--log-surface-2) 100%);
+}
+
+.dropzone:hover,
+.dropzone.active {
+  border-color: var(--nuxt-green);
+  background: linear-gradient(135deg, var(--log-surface-2) 0%, var(--nuxt-green-bg) 100%);
+}
+
+/* Glow effects */
+.glow-error {
+  box-shadow: 0 0 20px rgba(255, 71, 87, 0.3);
+}
+
+.glow-primary {
+  box-shadow: 0 0 20px rgba(0, 220, 130, 0.3);
+}
+
+/* JSON highlight */
+.json-key {
+  color: #a855f7;
+}
+
+.json-string {
+  color: #10b981;
+}
+
+.json-number {
+  color: #f59e0b;
+}
+
+.json-boolean {
+  color: #3b82f6;
+}
+
+.json-null {
+  color: #6b7280;
+}
+
+/* Animation */
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+@keyframes slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-in {
+  animation: slide-in 0.3s ease-out;
+}
+
+/* Virtual scroll container */
+.log-container {
+  height: calc(100vh - 220px);
+  overflow-y: auto;
+  background: var(--log-surface);
+  border-radius: 12px;
+  border: 1px solid var(--log-border);
+}
+
+/* Stats card */
+.stats-card {
+  background: var(--log-surface);
+  border: 1px solid var(--log-border);
+  border-radius: 12px;
+  padding: 16px;
+  transition: all 0.2s ease;
+}
+
+.stats-card:hover {
+  border-color: var(--nuxt-green);
+  transform: translateY(-2px);
+}
+
+/* Primary text and accents */
+.text-primary {
+  color: var(--nuxt-green) !important;
+}
+
+.text-primary-hover:hover {
+  color: var(--nuxt-green-light) !important;
+}
+
+.border-primary {
+  border-color: var(--nuxt-green) !important;
+}
+
+.bg-primary {
+  background-color: var(--nuxt-green) !important;
+}
+
+.bg-primary-soft {
+  background-color: var(--nuxt-green-bg) !important;
+}
+
+/* Focus states with green */
+input:focus,
+button:focus-visible {
+  outline-color: var(--nuxt-green);
+}
+
+/* Selection highlight */
+::selection {
+  background: var(--nuxt-green-bg);
+  color: var(--nuxt-green-light);
+}
+
