@@ -1,0 +1,196 @@
+{
+  "data": [
+    {
+      "traceID": "abc123def456789012345678901234ab",
+      "spans": [
+        {
+          "traceID": "abc123def456789012345678901234ab",
+          "spanID": "span001",
+          "operationName": "HTTP GET /api/users",
+          "references": [],
+          "startTime": 1700000000000000,
+          "duration": 150000,
+          "tags": [
+            { "key": "http.method", "type": "string", "value": "GET" },
+            { "key": "http.url", "type": "string", "value": "/api/users" },
+            { "key": "http.status_code", "type": "int64", "value": 200 },
+            { "key": "span.kind", "type": "string", "value": "server" }
+          ],
+          "logs": [],
+          "processID": "p1",
+          "warnings": null
+        },
+        {
+          "traceID": "abc123def456789012345678901234ab",
+          "spanID": "span002",
+          "operationName": "PostgreSQL SELECT",
+          "references": [
+            { "refType": "CHILD_OF", "traceID": "abc123def456789012345678901234ab", "spanID": "span001" }
+          ],
+          "startTime": 1700000000010000,
+          "duration": 45000,
+          "tags": [
+            { "key": "db.type", "type": "string", "value": "postgresql" },
+            { "key": "db.statement", "type": "string", "value": "SELECT * FROM users WHERE active = true" },
+            { "key": "span.kind", "type": "string", "value": "client" }
+          ],
+          "logs": [],
+          "processID": "p1",
+          "warnings": null
+        },
+        {
+          "traceID": "abc123def456789012345678901234ab",
+          "spanID": "span003",
+          "operationName": "Redis GET",
+          "references": [
+            { "refType": "CHILD_OF", "traceID": "abc123def456789012345678901234ab", "spanID": "span001" }
+          ],
+          "startTime": 1700000000060000,
+          "duration": 5000,
+          "tags": [
+            { "key": "db.type", "type": "string", "value": "redis" },
+            { "key": "db.statement", "type": "string", "value": "GET user:preferences:*" },
+            { "key": "span.kind", "type": "string", "value": "client" }
+          ],
+          "logs": [],
+          "processID": "p2",
+          "warnings": null
+        },
+        {
+          "traceID": "abc123def456789012345678901234ab",
+          "spanID": "span004",
+          "operationName": "HTTP POST /api/audit",
+          "references": [
+            { "refType": "CHILD_OF", "traceID": "abc123def456789012345678901234ab", "spanID": "span001" }
+          ],
+          "startTime": 1700000000070000,
+          "duration": 30000,
+          "tags": [
+            { "key": "http.method", "type": "string", "value": "POST" },
+            { "key": "http.url", "type": "string", "value": "/api/audit" },
+            { "key": "http.status_code", "type": "int64", "value": 201 },
+            { "key": "span.kind", "type": "string", "value": "client" }
+          ],
+          "logs": [],
+          "processID": "p3",
+          "warnings": null
+        },
+        {
+          "traceID": "abc123def456789012345678901234ab",
+          "spanID": "span005",
+          "operationName": "Kafka Produce",
+          "references": [
+            { "refType": "CHILD_OF", "traceID": "abc123def456789012345678901234ab", "spanID": "span004" }
+          ],
+          "startTime": 1700000000075000,
+          "duration": 20000,
+          "tags": [
+            { "key": "messaging.system", "type": "string", "value": "kafka" },
+            { "key": "messaging.destination", "type": "string", "value": "audit-events" },
+            { "key": "span.kind", "type": "string", "value": "producer" }
+          ],
+          "logs": [],
+          "processID": "p3",
+          "warnings": null
+        },
+        {
+          "traceID": "abc123def456789012345678901234ab",
+          "spanID": "span006",
+          "operationName": "validateToken",
+          "references": [
+            { "refType": "CHILD_OF", "traceID": "abc123def456789012345678901234ab", "spanID": "span001" }
+          ],
+          "startTime": 1700000000002000,
+          "duration": 8000,
+          "tags": [
+            { "key": "auth.type", "type": "string", "value": "jwt" },
+            { "key": "span.kind", "type": "string", "value": "internal" }
+          ],
+          "logs": [
+            {
+              "timestamp": 1700000000005000,
+              "fields": [
+                { "key": "event", "type": "string", "value": "token_validated" },
+                { "key": "user_id", "type": "string", "value": "user-123" }
+              ]
+            }
+          ],
+          "processID": "p1",
+          "warnings": null
+        },
+        {
+          "traceID": "abc123def456789012345678901234ab",
+          "spanID": "span007",
+          "operationName": "serializeResponse",
+          "references": [
+            { "refType": "CHILD_OF", "traceID": "abc123def456789012345678901234ab", "spanID": "span001" }
+          ],
+          "startTime": 1700000000110000,
+          "duration": 35000,
+          "tags": [
+            { "key": "response.size", "type": "int64", "value": 4096 },
+            { "key": "span.kind", "type": "string", "value": "internal" }
+          ],
+          "logs": [],
+          "processID": "p1",
+          "warnings": null
+        },
+        {
+          "traceID": "abc123def456789012345678901234ab",
+          "spanID": "span008",
+          "operationName": "External API Call",
+          "references": [
+            { "refType": "CHILD_OF", "traceID": "abc123def456789012345678901234ab", "spanID": "span001" }
+          ],
+          "startTime": 1700000000065000,
+          "duration": 40000,
+          "tags": [
+            { "key": "http.method", "type": "string", "value": "GET" },
+            { "key": "http.url", "type": "string", "value": "https://api.external.com/data" },
+            { "key": "http.status_code", "type": "int64", "value": 500 },
+            { "key": "error", "type": "bool", "value": true },
+            { "key": "span.kind", "type": "string", "value": "client" }
+          ],
+          "logs": [
+            {
+              "timestamp": 1700000000100000,
+              "fields": [
+                { "key": "event", "type": "string", "value": "error" },
+                { "key": "message", "type": "string", "value": "External service unavailable" }
+              ]
+            }
+          ],
+          "processID": "p4",
+          "warnings": ["Retried 3 times before failing"]
+        }
+      ],
+      "processes": {
+        "p1": {
+          "serviceName": "api-gateway",
+          "tags": [
+            { "key": "hostname", "type": "string", "value": "api-gateway-pod-1" }
+          ]
+        },
+        "p2": {
+          "serviceName": "cache-service",
+          "tags": [
+            { "key": "hostname", "type": "string", "value": "cache-pod-1" }
+          ]
+        },
+        "p3": {
+          "serviceName": "audit-service",
+          "tags": [
+            { "key": "hostname", "type": "string", "value": "audit-pod-1" }
+          ]
+        },
+        "p4": {
+          "serviceName": "integration-service",
+          "tags": [
+            { "key": "hostname", "type": "string", "value": "integration-pod-1" }
+          ]
+        }
+      }
+    }
+  ]
+}
+

@@ -1,0 +1,288 @@
+{
+  "nodes": [
+    {
+      "id": 1,
+      "callFrame": {
+        "functionName": "(root)",
+        "scriptId": "0",
+        "url": "",
+        "lineNumber": -1,
+        "columnNumber": -1
+      },
+      "hitCount": 0,
+      "children": [2, 3, 4]
+    },
+    {
+      "id": 2,
+      "callFrame": {
+        "functionName": "(idle)",
+        "scriptId": "0",
+        "url": "",
+        "lineNumber": -1,
+        "columnNumber": -1
+      },
+      "hitCount": 150,
+      "children": []
+    },
+    {
+      "id": 3,
+      "callFrame": {
+        "functionName": "(program)",
+        "scriptId": "0",
+        "url": "",
+        "lineNumber": -1,
+        "columnNumber": -1
+      },
+      "hitCount": 40,
+      "children": []
+    },
+    {
+      "id": 4,
+      "callFrame": {
+        "functionName": "main",
+        "scriptId": "1",
+        "url": "file:///app/src/main.js",
+        "lineNumber": 10,
+        "columnNumber": 0
+      },
+      "hitCount": 100,
+      "children": [5, 6, 7, 8]
+    },
+    {
+      "id": 5,
+      "callFrame": {
+        "functionName": "processUserData",
+        "scriptId": "1",
+        "url": "file:///app/src/services/userService.js",
+        "lineNumber": 25,
+        "columnNumber": 0
+      },
+      "hitCount": 400,
+      "children": [9, 10, 11]
+    },
+    {
+      "id": 6,
+      "callFrame": {
+        "functionName": "renderDashboard",
+        "scriptId": "2",
+        "url": "file:///app/src/components/Dashboard.vue",
+        "lineNumber": 50,
+        "columnNumber": 0
+      },
+      "hitCount": 300,
+      "children": [12, 13]
+    },
+    {
+      "id": 7,
+      "callFrame": {
+        "functionName": "fetchAPIData",
+        "scriptId": "3",
+        "url": "file:///app/src/api/client.js",
+        "lineNumber": 15,
+        "columnNumber": 0
+      },
+      "hitCount": 100,
+      "children": [14]
+    },
+    {
+      "id": 8,
+      "callFrame": {
+        "functionName": "(garbage collector)",
+        "scriptId": "0",
+        "url": "",
+        "lineNumber": -1,
+        "columnNumber": -1
+      },
+      "hitCount": 60,
+      "children": []
+    },
+    {
+      "id": 9,
+      "callFrame": {
+        "functionName": "parseJSON",
+        "scriptId": "1",
+        "url": "file:///app/src/utils/parser.js",
+        "lineNumber": 40,
+        "columnNumber": 0
+      },
+      "hitCount": 200,
+      "children": [15]
+    },
+    {
+      "id": 10,
+      "callFrame": {
+        "functionName": "validateSchema",
+        "scriptId": "1",
+        "url": "file:///app/src/utils/validator.js",
+        "lineNumber": 55,
+        "columnNumber": 0
+      },
+      "hitCount": 300,
+      "children": [16]
+    },
+    {
+      "id": 11,
+      "callFrame": {
+        "functionName": "transformDataOptimized",
+        "scriptId": "1",
+        "url": "file:///app/src/services/userService.js",
+        "lineNumber": 80,
+        "columnNumber": 0
+      },
+      "hitCount": 250,
+      "children": [17]
+    },
+    {
+      "id": 12,
+      "callFrame": {
+        "functionName": "updateVirtualDOM",
+        "scriptId": "2",
+        "url": "file:///app/node_modules/vue/dist/vue.runtime.esm.js",
+        "lineNumber": 1200,
+        "columnNumber": 0
+      },
+      "hitCount": 400,
+      "children": []
+    },
+    {
+      "id": 13,
+      "callFrame": {
+        "functionName": "renderChart",
+        "scriptId": "4",
+        "url": "file:///app/src/components/Chart.vue",
+        "lineNumber": 30,
+        "columnNumber": 0
+      },
+      "hitCount": 200,
+      "children": [18]
+    },
+    {
+      "id": 14,
+      "callFrame": {
+        "functionName": "native XMLHttpRequest.send",
+        "scriptId": "0",
+        "url": "native",
+        "lineNumber": -1,
+        "columnNumber": -1
+      },
+      "hitCount": 80,
+      "children": []
+    },
+    {
+      "id": 15,
+      "callFrame": {
+        "functionName": "JSON.parse",
+        "scriptId": "0",
+        "url": "native",
+        "lineNumber": -1,
+        "columnNumber": -1
+      },
+      "hitCount": 150,
+      "children": []
+    },
+    {
+      "id": 16,
+      "callFrame": {
+        "functionName": "RegExp.test",
+        "scriptId": "0",
+        "url": "native",
+        "lineNumber": -1,
+        "columnNumber": -1
+      },
+      "hitCount": 200,
+      "children": []
+    },
+    {
+      "id": 17,
+      "callFrame": {
+        "functionName": "calculateMetrics",
+        "scriptId": "1",
+        "url": "file:///app/src/services/analyticsService.js",
+        "lineNumber": 100,
+        "columnNumber": 0
+      },
+      "hitCount": 180,
+      "children": [19, 20]
+    },
+    {
+      "id": 18,
+      "callFrame": {
+        "functionName": "drawCanvas",
+        "scriptId": "4",
+        "url": "file:///app/src/components/Chart.vue",
+        "lineNumber": 75,
+        "columnNumber": 0
+      },
+      "hitCount": 150,
+      "children": []
+    },
+    {
+      "id": 19,
+      "callFrame": {
+        "functionName": "aggregateByDate",
+        "scriptId": "1",
+        "url": "file:///app/src/services/analyticsService.js",
+        "lineNumber": 150,
+        "columnNumber": 0
+      },
+      "hitCount": 120,
+      "children": []
+    },
+    {
+      "id": 20,
+      "callFrame": {
+        "functionName": "computeAverage",
+        "scriptId": "1",
+        "url": "file:///app/src/services/analyticsService.js",
+        "lineNumber": 180,
+        "columnNumber": 0
+      },
+      "hitCount": 100,
+      "children": []
+    },
+    {
+      "id": 21,
+      "callFrame": {
+        "functionName": "cacheManager",
+        "scriptId": "1",
+        "url": "file:///app/src/services/cacheService.js",
+        "lineNumber": 20,
+        "columnNumber": 0
+      },
+      "hitCount": 50,
+      "children": []
+    }
+  ],
+  "startTime": 0,
+  "endTime": 4500000,
+  "samples": [
+    1, 2, 2, 2, 2, 2, 3, 3, 4, 4,
+    5, 5, 5, 5, 9, 9, 15, 15,
+    10, 10, 10, 16, 16,
+    11, 11, 11, 17, 17, 19, 19, 20, 20,
+    6, 6, 6, 12, 12, 12, 12, 13, 13, 18, 18,
+    7, 14,
+    8, 8,
+    21, 21,
+    5, 5, 9, 15,
+    10, 10, 16,
+    11, 11, 17, 19, 20,
+    6, 6, 12, 12, 13, 18
+  ],
+  "timeDeltas": [
+    10000, 50000, 50000, 50000, 50000, 50000, 25000, 25000, 35000, 35000,
+    50000, 50000, 50000, 50000, 40000, 40000, 35000, 35000,
+    45000, 45000, 45000, 40000, 40000,
+    40000, 40000, 40000, 35000, 35000, 30000, 30000, 25000, 25000,
+    40000, 40000, 40000, 50000, 50000, 50000, 50000, 35000, 35000, 30000, 30000,
+    30000, 25000,
+    35000, 35000,
+    20000, 20000,
+    50000, 50000, 40000, 35000,
+    45000, 45000, 40000,
+    40000, 40000, 35000, 30000, 25000,
+    40000, 40000, 50000, 50000, 35000, 30000
+  ],
+  "title": "Example Application CPU Profile (Optimized)"
+}
+
