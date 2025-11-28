@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Log Viewer - Visualizador de Logs Open Source</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0a0a0f;
+      --surface: #12121a;
+      --surface-2: #1a1a25;
+      --border: #2a2a3a;
+      --text: #e0e0e8;
+      --text-muted: #8888a0;
+      --green: #00DC82;
+      --green-light: #36e89e;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Outfit', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    
+    header {
+      padding: 24px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--text);
+    }
+    
+    .logo svg {
+      width: 40px;
+      height: 40px;
+    }
+    
+    .logo span {
+      font-size: 1.5rem;
+      font-weight: 600;
+      background: linear-gradient(90deg, var(--green), var(--green-light));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    
+    .nav-links {
+      display: flex;
+      gap: 32px;
+    }
+    
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    
+    .nav-links a:hover {
+      color: var(--green);
+    }
+    
+    .hero {
+      padding: 100px 0;
+      text-align: center;
+    }
+    
+    .hero h1 {
+      font-size: 3.5rem;
+      font-weight: 700;
+      margin-bottom: 24px;
+      background: linear-gradient(90deg, var(--green), var(--green-light), var(--green));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    
+    .hero p {
+      font-size: 1.25rem;
+      color: var(--text-muted);
+      max-width: 600px;
+      margin: 0 auto 40px;
+    }
+    
+    .buttons {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    
+    .btn {
+      padding: 14px 32px;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    
+    .btn-primary {
+      background: var(--green);
+      color: var(--bg);
+    }
+    
+    .btn-primary:hover {
+      background: var(--green-light);
+      transform: translateY(-2px);
+    }
+    
+    .btn-secondary {
+      background: var(--surface);
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+    
+    .btn-secondary:hover {
+      border-color: var(--green);
+      color: var(--green);
+    }
+    
+    .features {
+      padding: 80px 0;
+    }
+    
+    .features h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 48px;
+    }
+    
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+    
+    .feature-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 32px;
+      transition: all 0.2s;
+    }
+    
+    .feature-card:hover {
+      border-color: var(--green);
+      transform: translateY(-4px);
+    }
+    
+    .feature-card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 12px;
+      color: var(--green);
+    }
+    
+    .feature-card p {
+      color: var(--text-muted);
+    }
+    
+    .code-section {
+      padding: 80px 0;
+      background: var(--surface);
+    }
+    
+    .code-section h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 48px;
+    }
+    
+    .code-block {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      max-width: 700px;
+      margin: 0 auto;
+      overflow-x: auto;
+    }
+    
+    .code-block pre {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 14px;
+      color: var(--text);
+    }
+    
+    .code-block .comment {
+      color: var(--text-muted);
+    }
+    
+    .code-block .cmd {
+      color: var(--green);
+    }
+    
+    footer {
+      padding: 48px 0;
+      border-top: 1px solid var(--border);
+      text-align: center;
+    }
+    
+    footer p {
+      color: var(--text-muted);
+    }
+    
+    footer a {
+      color: var(--green);
+      text-decoration: none;
+    }
+    
+    footer a:hover {
+      text-decoration: underline;
+    }
+    
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+      
+      .nav-links {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <a href="/" class="logo">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+            <path d="M12 8C12 5.79086 13.7909 4 16 4H36L52 20V56C52 58.2091 50.2091 60 48 60H16C13.7909 60 12 58.2091 12 56V8Z" fill="#00DC82" fill-opacity="0.2"/>
+            <path d="M12 8C12 5.79086 13.7909 4 16 4H36L52 20V56C52 58.2091 50.2091 60 48 60H16C13.7909 60 12 58.2091 12 56V8Z" stroke="#00DC82" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M36 4V16C36 18.2091 37.7909 20 40 20H52" stroke="#00DC82" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M20 30H44" stroke="#00DC82" stroke-width="2.5" stroke-linecap="round"/>
+            <path d="M20 38H38" stroke="#00DC82" stroke-width="2.5" stroke-linecap="round"/>
+            <path d="M20 46H42" stroke="#00DC82" stroke-width="2.5" stroke-linecap="round"/>
+            <circle cx="46" cy="46" r="10" fill="#0a0a0f" stroke="#00DC82" stroke-width="2.5"/>
+            <circle cx="46" cy="46" r="6" stroke="#00DC82" stroke-width="2" stroke-opacity="0.5"/>
+            <path d="M53 53L58 58" stroke="#00DC82" stroke-width="3" stroke-linecap="round"/>
+          </svg>
+          <span>Log Viewer</span>
+        </a>
+        <div class="nav-links">
+          <a href="#features">Features</a>
+          <a href="#install">Instalação</a>
+          <a href="contributing.html">Contribuir</a>
+          <a href="https://github.com/seu-usuario/log-viewer" target="_blank">GitHub</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <h1>Log Viewer</h1>
+        <p>Visualizador de logs web, simples e rápido. Sem backend, sem persistência, totalmente client-side e open source.</p>
+        <div class="buttons">
+          <a href="https://github.com/seu-usuario/log-viewer" class="btn btn-primary">Ver no GitHub</a>
+          <a href="#install" class="btn btn-secondary">Instalação</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="features" id="features">
+      <div class="container">
+        <h2>Features</h2>
+        <div class="features-grid">
+          <div class="feature-card">
+            <h3>📁 Multi-formato</h3>
+            <p>Suporte a JSON, Apache, Nginx, Syslog e formatos customizados de log.</p>
+          </div>
+          <div class="feature-card">
+            <h3>🔍 Busca Avançada</h3>
+            <p>Busca por texto exato, regex, começa com, termina com e case sensitive.</p>
+          </div>
+          <div class="feature-card">
+            <h3>🏷️ Filtro por Nível</h3>
+            <p>Filtre rapidamente por ERROR, WARN, INFO, DEBUG e TRACE.</p>
+          </div>
+          <div class="feature-card">
+            <h3>📊 Estatísticas</h3>
+            <p>Visualize contagem de logs por nível em tempo real.</p>
+          </div>
+          <div class="feature-card">
+            <h3>🚀 Performance</h3>
+            <p>Processamento 100% client-side, sem necessidade de backend.</p>
+          </div>
+          <div class="feature-card">
+            <h3>🌙 Dark Mode</h3>
+            <p>Interface escura otimizada para longas sessões de análise.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="code-section" id="install">
+      <div class="container">
+        <h2>Instalação</h2>
+        <div class="code-block">
+          <pre><span class="comment"># Docker (Recomendado)</span>
+<span class="cmd">docker run -d -p 3000:3000 ghcr.io/seu-usuario/log-viewer:latest</span>
+
+<span class="comment"># Acesse</span>
+<span class="cmd">http://localhost:3000</span>
+
+<span class="comment"># Ou clone e rode localmente</span>
+<span class="cmd">git clone https://github.com/seu-usuario/log-viewer.git</span>
+<span class="cmd">cd log-viewer</span>
+<span class="cmd">npm install</span>
+<span class="cmd">npm run dev</span></pre>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Open Source · MIT License · <a href="contributing.html">Contribua</a> · <a href="https://github.com/seu-usuario/log-viewer" target="_blank">GitHub</a></p>
+    </div>
+  </footer>
+</body>
+</html>
+

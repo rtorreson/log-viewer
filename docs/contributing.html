@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contribuir - Log Viewer</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0a0a0f;
+      --surface: #12121a;
+      --surface-2: #1a1a25;
+      --border: #2a2a3a;
+      --text: #e0e0e8;
+      --text-muted: #8888a0;
+      --green: #00DC82;
+      --green-light: #36e89e;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Outfit', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+    
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    
+    header {
+      padding: 24px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--text);
+    }
+    
+    .logo svg {
+      width: 40px;
+      height: 40px;
+    }
+    
+    .logo span {
+      font-size: 1.5rem;
+      font-weight: 600;
+      background: linear-gradient(90deg, var(--green), var(--green-light));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    
+    .back-link {
+      color: var(--text-muted);
+      text-decoration: none;
+    }
+    
+    .back-link:hover {
+      color: var(--green);
+    }
+    
+    main {
+      padding: 60px 0;
+    }
+    
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 24px;
+      background: linear-gradient(90deg, var(--green), var(--green-light));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    
+    h2 {
+      font-size: 1.5rem;
+      margin: 48px 0 16px;
+      color: var(--green);
+    }
+    
+    p {
+      margin-bottom: 16px;
+      color: var(--text-muted);
+    }
+    
+    ol, ul {
+      margin-bottom: 24px;
+      padding-left: 24px;
+      color: var(--text-muted);
+    }
+    
+    li {
+      margin-bottom: 12px;
+    }
+    
+    code {
+      font-family: 'JetBrains Mono', monospace;
+      background: var(--surface);
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 0.9em;
+      color: var(--green);
+    }
+    
+    .code-block {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      margin: 24px 0;
+      overflow-x: auto;
+    }
+    
+    .code-block pre {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 14px;
+      color: var(--text);
+      margin: 0;
+    }
+    
+    .code-block .comment {
+      color: var(--text-muted);
+    }
+    
+    .code-block .cmd {
+      color: var(--green);
+    }
+    
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      margin: 24px 0;
+    }
+    
+    .card h3 {
+      color: var(--green);
+      margin-bottom: 12px;
+    }
+    
+    footer {
+      padding: 48px 0;
+      border-top: 1px solid var(--border);
+      text-align: center;
+    }
+    
+    footer p {
+      color: var(--text-muted);
+    }
+    
+    footer a {
+      color: var(--green);
+      text-decoration: none;
+    }
+    
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <a href="index.html" class="logo">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+            <path d="M12 8C12 5.79086 13.7909 4 16 4H36L52 20V56C52 58.2091 50.2091 60 48 60H16C13.7909 60 12 58.2091 12 56V8Z" fill="#00DC82" fill-opacity="0.2"/>
+            <path d="M12 8C12 5.79086 13.7909 4 16 4H36L52 20V56C52 58.2091 50.2091 60 48 60H16C13.7909 60 12 58.2091 12 56V8Z" stroke="#00DC82" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M36 4V16C36 18.2091 37.7909 20 40 20H52" stroke="#00DC82" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M20 30H44" stroke="#00DC82" stroke-width="2.5" stroke-linecap="round"/>
+            <path d="M20 38H38" stroke="#00DC82" stroke-width="2.5" stroke-linecap="round"/>
+            <path d="M20 46H42" stroke="#00DC82" stroke-width="2.5" stroke-linecap="round"/>
+            <circle cx="46" cy="46" r="10" fill="#0a0a0f" stroke="#00DC82" stroke-width="2.5"/>
+            <circle cx="46" cy="46" r="6" stroke="#00DC82" stroke-width="2" stroke-opacity="0.5"/>
+            <path d="M53 53L58 58" stroke="#00DC82" stroke-width="3" stroke-linecap="round"/>
+          </svg>
+          <span>Log Viewer</span>
+        </a>
+        <a href="index.html" class="back-link">← Voltar</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <h1>Como Contribuir</h1>
+      
+      <p>Log Viewer é um projeto open source e adoramos contribuições da comunidade!</p>
+
+      <h2>Formas de Contribuir</h2>
+      <ul>
+        <li>🐛 Reportar bugs</li>
+        <li>💡 Sugerir novas features</li>
+        <li>📝 Melhorar documentação</li>
+        <li>🔧 Submeter pull requests</li>
+        <li>⭐ Dar uma estrela no GitHub</li>
+      </ul>
+
+      <h2>Setup do Ambiente</h2>
+      <div class="code-block">
+        <pre><span class="comment"># Clone o repositório</span>
+<span class="cmd">git clone https://github.com/seu-usuario/log-viewer.git</span>
+<span class="cmd">cd log-viewer</span>
+
+<span class="comment"># Instale as dependências</span>
+<span class="cmd">npm install</span>
+
+<span class="comment"># Rode o servidor de desenvolvimento</span>
+<span class="cmd">npm run dev</span></pre>
+      </div>
+
+      <h2>Fluxo de Contribuição</h2>
+      <ol>
+        <li>Fork o repositório</li>
+        <li>Crie uma branch para sua feature: <code>git checkout -b feature/minha-feature</code></li>
+        <li>Faça suas alterações</li>
+        <li>Commit: <code>git commit -m "Add: minha feature"</code></li>
+        <li>Push: <code>git push origin feature/minha-feature</code></li>
+        <li>Abra um Pull Request</li>
+      </ol>
+
+      <h2>Padrões de Código</h2>
+      <div class="card">
+        <h3>Convenções</h3>
+        <ul>
+          <li>Use TypeScript</li>
+          <li>Siga o ESLint configurado</li>
+          <li>Commits em inglês ou português</li>
+          <li>PRs com descrição clara do que foi alterado</li>
+        </ul>
+      </div>
+
+      <h2>Stack Tecnológica</h2>
+      <ul>
+        <li><strong>Framework:</strong> Nuxt 4</li>
+        <li><strong>UI:</strong> Vue 3 + Nuxt UI</li>
+        <li><strong>Estilização:</strong> Tailwind CSS</li>
+        <li><strong>Linguagem:</strong> TypeScript</li>
+      </ul>
+
+      <h2>Ideias para Contribuir</h2>
+      <div class="card">
+        <h3>Features Desejadas</h3>
+        <ul>
+          <li>Suporte a mais formatos de log</li>
+          <li>Export de logs filtrados</li>
+          <li>Temas customizáveis</li>
+          <li>Gráficos de timeline</li>
+          <li>Atalhos de teclado</li>
+          <li>Internacionalização (i18n)</li>
+        </ul>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Open Source · MIT License · <a href="https://github.com/seu-usuario/log-viewer" target="_blank">GitHub</a></p>
+    </div>
+  </footer>
+</body>
+</html>
+
