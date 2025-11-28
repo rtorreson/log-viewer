@@ -1,0 +1,359 @@
+{
+  "common": {
+    "search": "Rechercher",
+    "filter": "Filtrer",
+    "reset": "Réinitialiser",
+    "loading": "Chargement...",
+    "error": "Erreur",
+    "close": "Fermer",
+    "save": "Enregistrer",
+    "cancel": "Annuler",
+    "delete": "Supprimer",
+    "edit": "Modifier",
+    "copy": "Copier",
+    "copied": "Copié !",
+    "download": "Télécharger",
+    "upload": "Importer",
+    "back": "Retour",
+    "next": "Suivant",
+    "previous": "Précédent",
+    "yes": "Oui",
+    "no": "Non",
+    "all": "Tous",
+    "none": "Aucun",
+    "show": "Afficher",
+    "hide": "Masquer",
+    "more": "Plus",
+    "less": "Moins",
+    "expand": "Développer",
+    "collapse": "Réduire",
+    "selectFile": "Sélectionner un fichier",
+    "dragAndDrop": "Glissez et déposez",
+    "or": "ou",
+    "clickToSelect": "cliquez pour sélectionner",
+    "noData": "Aucune donnée disponible",
+    "noResults": "Aucun résultat trouvé",
+    "tryAgain": "Réessayer"
+  },
+  "home": {
+    "title": "OpenWatch",
+    "subtitle": "Suite d'observabilité côté client. Analysez les logs, profiles, traces et requêtes réseau directement dans votre navigateur — sans serveur, sans persistance, 100% privé.",
+    "comingSoon": "Bientôt disponible",
+    "footer": {
+      "clientSide": "100% côté client",
+      "noDataSent": "Aucune donnée envoyée",
+      "openSource": "Open Source"
+    }
+  },
+  "tools": {
+    "logViewer": {
+      "name": "Visualiseur de Logs",
+      "description": "Analysez les fichiers de log de manière interactive",
+      "features": {
+        "levels": "Filtres par niveau (error, warn, info, debug)",
+        "search": "Recherche avancée avec regex",
+        "stats": "Statistiques en temps réel",
+        "formats": "Support de multiples formats"
+      }
+    },
+    "profiler": {
+      "name": "Visualiseur de Profiles",
+      "description": "Analysez les CPU profiles avec flame graphs et call trees",
+      "features": {
+        "flameGraph": "Flame Graph interactif",
+        "callTree": "Call Tree et Bottom-Up",
+        "sourceView": "Vue du code avec carte thermique",
+        "categories": "Catégorisation des fonctions"
+      }
+    },
+    "comparison": {
+      "name": "Comparaison de Profiles",
+      "description": "Comparez deux profiles pour identifier régressions et améliorations",
+      "features": {
+        "diff": "Diff de fonctions (ajoutées/supprimées/modifiées)",
+        "delta": "Delta de temps par fonction",
+        "categories": "Comparaison par catégorie",
+        "regressions": "Identification des régressions"
+      }
+    },
+    "traces": {
+      "name": "Visualiseur de Traces",
+      "description": "Visualisez les traces distribués d'OpenTelemetry/Jaeger",
+      "features": {
+        "waterfall": "Chronologie en cascade",
+        "serviceMap": "Carte des services",
+        "spans": "Détails des spans",
+        "filters": "Filtres avancés"
+      }
+    },
+    "network": {
+      "name": "Inspecteur Réseau",
+      "description": "Analysez les fichiers HAR avec cascade de requêtes",
+      "features": {
+        "waterfall": "Cascade de requêtes",
+        "timing": "Détail des temps",
+        "headers": "En-têtes et payload",
+        "stats": "Statistiques réseau"
+      }
+    }
+  },
+  "logViewer": {
+    "title": "Visualiseur de Logs",
+    "upload": {
+      "title": "Importer un Fichier de Log",
+      "description": "Glissez et déposez votre fichier de log ou cliquez pour sélectionner",
+      "formats": "Supporte .log, .txt, JSON Lines"
+    },
+    "filters": {
+      "searchPlaceholder": "Rechercher dans les logs...",
+      "level": "Niveau",
+      "allLevels": "Tous les Niveaux",
+      "searchMode": "Mode de recherche",
+      "caseSensitive": "Sensible à la casse",
+      "modes": {
+        "contains": "Contient",
+        "exact": "Exact",
+        "startsWith": "Commence par",
+        "endsWith": "Termine par",
+        "regex": "Regex"
+      }
+    },
+    "levels": {
+      "error": "Erreur",
+      "warn": "Avertissement",
+      "info": "Info",
+      "debug": "Debug",
+      "trace": "Trace",
+      "unknown": "Inconnu"
+    },
+    "stats": {
+      "totalLines": "Total des lignes",
+      "format": "Format",
+      "errors": "Erreurs",
+      "warnings": "Avertissements"
+    },
+    "detail": {
+      "timestamp": "Date/Heure",
+      "level": "Niveau",
+      "message": "Message",
+      "source": "Source",
+      "metadata": "Métadonnées"
+    },
+    "loadMore": "Charger plus"
+  },
+  "profiler": {
+    "title": "Visualiseur de Profiles",
+    "upload": {
+      "title": "Importer un CPU Profile",
+      "description": "Glissez et déposez votre CPU profile ou cliquez pour sélectionner",
+      "formats": "Supporte .cpuprofile, .json (Chrome DevTools, Node.js, V8)"
+    },
+    "views": {
+      "summary": "Résumé",
+      "flameGraph": "Flame Graph",
+      "callTree": "Call Tree",
+      "bottomUp": "Bottom-Up",
+      "timeline": "Chronologie",
+      "source": "Code"
+    },
+    "filters": {
+      "searchPlaceholder": "Rechercher des fonctions...",
+      "hideIdle": "Masquer Idle",
+      "hideGC": "Masquer GC",
+      "hideNative": "Masquer Native",
+      "minPercentage": "% Minimum"
+    },
+    "stats": {
+      "totalTime": "Temps Total",
+      "activeTime": "Temps Actif",
+      "samples": "Échantillons",
+      "nodes": "Nœuds",
+      "gcTime": "Temps GC"
+    },
+    "flameGraph": {
+      "zoomOut": "Dézoomer",
+      "resetZoom": "Réinitialiser le zoom",
+      "selfTime": "Propre",
+      "totalTime": "Total"
+    },
+    "callTree": {
+      "function": "Fonction",
+      "selfTime": "Temps Propre",
+      "totalTime": "Temps Total"
+    },
+    "hotFunctions": {
+      "title": "Fonctions les Plus Coûteuses",
+      "hits": "Hits"
+    },
+    "functionDetail": {
+      "callers": "Appelants",
+      "callees": "Appelés",
+      "info": "Info",
+      "noCallers": "Aucun appelant trouvé",
+      "noCallees": "Aucun appelé trouvé",
+      "location": "Emplacement"
+    },
+    "categories": {
+      "javascript": "JavaScript",
+      "native": "Natif",
+      "gc": "Ramasse-miettes",
+      "idle": "Inactif",
+      "program": "Programme",
+      "system": "Système",
+      "wasm": "WebAssembly",
+      "regexp": "RegExp",
+      "compile": "Compilation",
+      "other": "Autre"
+    }
+  },
+  "comparison": {
+    "title": "Comparaison de Profiles",
+    "upload": {
+      "title": "Comparer les Profiles",
+      "baseline": "Base",
+      "comparison": "Comparaison",
+      "baselineHint": "Déposez ou cliquez pour sélectionner",
+      "comparisonHint": "Chargez d'abord la base",
+      "tips": {
+        "title": "Conseils",
+        "baseline": "Utilisez Base pour le profile \"avant\" (version originale/ancienne)",
+        "comparison": "Utilisez Comparaison pour le profile \"après\" (version nouvelle/optimisée)",
+        "colors": "Vert = amélioration (plus rapide), Rouge = régression (plus lent)"
+      }
+    },
+    "results": {
+      "verdict": {
+        "significantImprovement": "Amélioration Significative",
+        "minorImprovement": "Amélioration Mineure",
+        "significantRegression": "Régression Significative",
+        "minorRegression": "Régression Mineure",
+        "noChange": "Aucun Changement Significatif"
+      },
+      "totalTime": "Temps Total",
+      "samples": "Échantillons",
+      "regressions": "Régressions",
+      "improvements": "Améliorations",
+      "functionsSlower": "fonctions plus lentes",
+      "functionsFaster": "fonctions plus rapides"
+    },
+    "tabs": {
+      "changed": "Modifiées",
+      "added": "Ajoutées",
+      "removed": "Supprimées"
+    },
+    "table": {
+      "function": "Fonction",
+      "baseline": "Base",
+      "comparison": "Comparaison",
+      "diff": "Diff",
+      "noChanges": "Aucun changement significatif détecté"
+    },
+    "swap": "Échanger",
+    "topRegressions": "Principales Régressions (Plus Lentes)",
+    "topImprovements": "Principales Améliorations (Plus Rapides)"
+  },
+  "traces": {
+    "title": "Visualiseur de Traces",
+    "upload": {
+      "title": "Importer un Fichier de Trace",
+      "description": "Glissez et déposez votre fichier de trace ou cliquez pour sélectionner",
+      "formats": "Supporte OpenTelemetry JSON, Jaeger"
+    },
+    "views": {
+      "timeline": "Chronologie",
+      "serviceMap": "Carte des Services",
+      "spans": "Spans"
+    },
+    "filters": {
+      "searchPlaceholder": "Rechercher des spans...",
+      "service": "Service",
+      "operation": "Opération",
+      "status": "Statut",
+      "allServices": "Tous les Services",
+      "allOperations": "Toutes les Opérations"
+    },
+    "stats": {
+      "duration": "Durée",
+      "spans": "Spans",
+      "services": "Services",
+      "errors": "Erreurs"
+    },
+    "span": {
+      "service": "Service",
+      "operation": "Opération",
+      "duration": "Durée",
+      "startTime": "Heure de Début",
+      "status": "Statut",
+      "tags": "Tags",
+      "logs": "Logs",
+      "events": "Événements"
+    },
+    "status": {
+      "ok": "OK",
+      "error": "Erreur",
+      "unset": "Non défini"
+    }
+  },
+  "network": {
+    "title": "Inspecteur Réseau",
+    "upload": {
+      "title": "Importer un Fichier HAR",
+      "description": "Glissez et déposez votre fichier HAR ou cliquez pour sélectionner",
+      "formats": "Supporte HTTP Archive (.har)"
+    },
+    "views": {
+      "waterfall": "Cascade",
+      "table": "Tableau"
+    },
+    "filters": {
+      "searchPlaceholder": "Rechercher des requêtes...",
+      "type": "Type",
+      "status": "Statut",
+      "allTypes": "Tous les Types"
+    },
+    "types": {
+      "xhr": "XHR",
+      "fetch": "Fetch",
+      "document": "Document",
+      "stylesheet": "CSS",
+      "script": "JS",
+      "image": "Image",
+      "font": "Police",
+      "other": "Autre"
+    },
+    "stats": {
+      "requests": "Requêtes",
+      "transferred": "Transféré",
+      "resources": "Ressources",
+      "loadTime": "Temps de Chargement",
+      "domContentLoaded": "DOMContentLoaded"
+    },
+    "request": {
+      "url": "URL",
+      "method": "Méthode",
+      "status": "Statut",
+      "type": "Type",
+      "size": "Taille",
+      "time": "Temps",
+      "headers": "En-têtes",
+      "requestHeaders": "En-têtes de Requête",
+      "responseHeaders": "En-têtes de Réponse",
+      "payload": "Payload",
+      "response": "Réponse",
+      "timing": "Timing",
+      "timingBreakdown": {
+        "blocked": "Bloqué",
+        "dns": "DNS",
+        "connect": "Connexion",
+        "ssl": "SSL",
+        "send": "Envoi",
+        "wait": "Attente",
+        "receive": "Réception"
+      }
+    }
+  },
+  "languageSwitcher": {
+    "label": "Langue"
+  }
+}
+
