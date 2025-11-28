@@ -57,7 +57,7 @@ function openFileDialog() {
         Log Viewer
       </h1>
       <p class="text-[var(--log-text-muted)] mt-2 text-lg">
-        Visualize e analise seus logs de forma simples e elegante
+        Visualize e analise seus logs de forma simples
       </p>
     </div>
 
