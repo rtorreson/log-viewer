@@ -50,15 +50,8 @@ function openFileDialog() {
   <div class="flex flex-col items-center justify-center min-h-[60vh] p-8">
     <!-- Logo/Header -->
     <div class="mb-12 text-center">
-      <div class="flex items-center justify-center gap-4 mb-4">
-        <div class="relative">
-          <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#00DC82] to-[#00b368] flex items-center justify-center">
-            <UIcon name="i-heroicons-document-text" class="w-8 h-8 text-white" />
-          </div>
-          <div class="absolute -bottom-1 -right-1 w-6 h-6 rounded-full bg-[#00DC82] flex items-center justify-center">
-            <UIcon name="i-heroicons-magnifying-glass" class="w-3 h-3 text-[#0a0a0f]" />
-          </div>
-        </div>
+      <div class="flex items-center justify-center gap-4 mb-6">
+        <LogIcon :size="80" class="text-[#00DC82]" />
       </div>
       <h1 class="text-4xl font-bold bg-gradient-to-r from-[#00DC82] via-[#36e89e] to-[#00b368] bg-clip-text text-transparent">
         Log Viewer
@@ -117,24 +110,6 @@ function openFileDialog() {
       </div>
     </div>
 
-    <!-- Features -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12 max-w-3xl w-full">
-      <div class="stats-card text-center">
-        <UIcon name="i-heroicons-funnel" class="w-8 h-8 text-[#00DC82] mx-auto mb-3" />
-        <h3 class="font-semibold text-[var(--log-text)]">Filtros Avançados</h3>
-        <p class="text-sm text-[var(--log-text-muted)] mt-1">Filtre por nível, busca e tempo</p>
-      </div>
-      <div class="stats-card text-center">
-        <UIcon name="i-heroicons-chart-bar" class="w-8 h-8 text-[#00DC82] mx-auto mb-3" />
-        <h3 class="font-semibold text-[var(--log-text)]">Estatísticas</h3>
-        <p class="text-sm text-[var(--log-text-muted)] mt-1">Visualize métricas dos logs</p>
-      </div>
-      <div class="stats-card text-center">
-        <UIcon name="i-heroicons-bolt" class="w-8 h-8 text-[#00DC82] mx-auto mb-3" />
-        <h3 class="font-semibold text-[var(--log-text)]">Rápido</h3>
-        <p class="text-sm text-[var(--log-text-muted)] mt-1">Processamento local instantâneo</p>
-      </div>
-    </div>
   </div>
 </template>
 
