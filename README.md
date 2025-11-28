@@ -1,6 +1,6 @@
-# Log Viewer
+# OpenWatch
 
-Visualizador de logs web, simples e rápido. Sem backend, sem persistência, totalmente client-side.
+Client-side observability suite. Logs, profiles, traces, and network analysis - all in your browser.
 
 ![Nuxt](https://img.shields.io/badge/Nuxt-4-00DC82?logo=nuxtdotjs)
 ![License](https://img.shields.io/badge/license-MIT-blue)
@@ -8,32 +8,56 @@ Visualizador de logs web, simples e rápido. Sem backend, sem persistência, tot
 
 ## Screenshot
 
-![Log Viewer Screenshot](docs/screenshot.png)
+![OpenWatch Screenshot](docs/screenshot.png)
 
 ## Features
 
-- Upload de arquivos `.log` e `.txt`
-- Parsing automático de múltiplos formatos (JSON, Apache, Syslog, Custom)
-- Busca avançada (contém, exato, regex, começa/termina com)
-- Filtro por nível de log (ERROR, WARN, INFO, DEBUG, TRACE)
-- Case sensitive toggle
-- Estatísticas em tempo real
-- Interface dark mode
+### Log Viewer
+- Upload `.log` and `.txt` files
+- Auto-parsing of multiple formats (JSON, Apache, Syslog, Custom)
+- Advanced search (contains, exact, regex, starts/ends with)
+- Filter by log level (ERROR, WARN, INFO, DEBUG, TRACE)
+- Real-time statistics
+
+### Profile Viewer
+- Interactive Flame Graph
+- Call Tree & Bottom-Up views
+- Source View with heat map
+- Function categorization (JS, Native, GC)
+- Hot Functions list
+
+### Profile Comparison
+- Diff between two profiles
+- Identify regressions and improvements
+- Category comparison
+- Delta stats
+
+### Trace Viewer (Coming Soon)
+- OpenTelemetry/Jaeger support
+- Waterfall timeline
+- Service map
+- Span details
+
+### Network Inspector (Coming Soon)
+- HAR file analysis
+- Request waterfall
+- Headers, payload, response
+- Performance timing
 
 ## Quick Start
 
-### Docker (Recomendado)
+### Docker (Recommended)
 
 ```bash
-docker run -d -p 3000:3000 ghcr.io/rtorreson/log-viewer:latest
+docker run -d -p 3000:3000 ghcr.io/rtorreson/openwatch:latest
 ```
 
-Acesse: http://localhost:3000
+Access: http://localhost:3000
 
-### Desenvolvimento Local
+### Local Development
 
 ```bash
-# Instalar dependências
+# Install dependencies
 npm install
 
 # Dev server
@@ -46,22 +70,22 @@ npm run build
 npm run preview
 ```
 
-## Docker Build Manual
+## Docker Build
 
 ```bash
-# Build da imagem
-docker build -t log-viewer .
+# Build image
+docker build -t openwatch .
 
-# Rodar container
-docker run -d -p 3000:3000 --name log-viewer log-viewer
+# Run container
+docker run -d -p 3000:3000 --name openwatch openwatch
 ```
 
-## Configuração
+## Configuration
 
-| Variável | Default | Descrição |
-|----------|---------|-----------|
-| `PORT` | `3000` | Porta do servidor |
-| `HOST` | `0.0.0.0` | Host do servidor |
+| Variable | Default | Description |
+|----------|---------|-------------|
+| `PORT` | `3000` | Server port |
+| `HOST` | `0.0.0.0` | Server host |
 
 ## Stack
 
@@ -70,17 +94,16 @@ docker run -d -p 3000:3000 --name log-viewer log-viewer
 - [Nuxt UI](https://ui.nuxt.com)
 - [Tailwind CSS](https://tailwindcss.com)
 
-## Contribuindo
+## Contributing
 
-Este projeto é **open source** e aberto a melhorias.
+This project is **open source** and open to improvements.
 
-1. Fork o repositório
-2. Crie uma branch (`git checkout -b feature/minha-feature`)
-3. Commit suas mudanças (`git commit -m 'Add feature'`)
-4. Push para a branch (`git push origin feature/minha-feature`)
-5. Abra um Pull Request
+1. Fork the repository
+2. Create a branch (`git checkout -b feature/my-feature`)
+3. Commit your changes (`git commit -m 'Add feature'`)
+4. Push to branch (`git push origin feature/my-feature`)
+5. Open a Pull Request
 
 ## License
 
 MIT
-

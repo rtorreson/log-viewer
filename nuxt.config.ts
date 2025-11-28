@@ -8,7 +8,27 @@ export default defineNuxtConfig({
     '@nuxt/eslint',
     '@nuxt/hints',
     '@nuxt/image',
+    '@nuxtjs/i18n',
   ],
+
+  i18n: {
+    locales: [
+      { code: 'en', name: 'English', file: 'en.json' },
+      { code: 'pt-BR', name: 'Português', file: 'pt-BR.json' },
+      { code: 'es', name: 'Español', file: 'es.json' },
+      { code: 'fr', name: 'Français', file: 'fr.json' },
+      { code: 'de', name: 'Deutsch', file: 'de.json' },
+    ],
+    defaultLocale: 'en',
+    lazy: true,
+    langDir: 'locales',
+    strategy: 'no_prefix',
+    detectBrowserLanguage: {
+      useCookie: true,
+      cookieKey: 'i18n_redirected',
+      redirectOn: 'root',
+    },
+  },
 
   css: ['~/assets/css/main.css'],
 
@@ -20,9 +40,9 @@ export default defineNuxtConfig({
   app: {
     baseURL: process.env.NUXT_APP_BASE_URL || '/',
     head: {
-      title: 'Log Viewer',
+      title: 'OpenWatch',
       meta: [
-        { name: 'description', content: 'Log Viewer - Open Source' }
+        { name: 'description', content: 'OpenWatch - Client-side Observability Suite' }
       ],
       link: [
         { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
