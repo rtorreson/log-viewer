@@ -1,0 +1,6 @@
+# Code Owners - Apenas estes usuários podem aprovar PRs
+# Documentação: https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+
+# Todos os arquivos precisam de aprovação do owner
+* @rtorreson
+
