@@ -1,75 +1,86 @@
-# Nuxt Minimal Starter
+# Log Viewer
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Visualizador de logs web, simples e rápido. Sem backend, sem persistência, totalmente client-side.
 
-## Setup
+![Nuxt](https://img.shields.io/badge/Nuxt-4-00DC82?logo=nuxtdotjs)
+![License](https://img.shields.io/badge/license-MIT-blue)
+![Docker](https://img.shields.io/badge/docker-ready-2496ED?logo=docker)
 
-Make sure to install dependencies:
+## Screenshot
+
+![Log Viewer Screenshot](docs/screenshot.png)
+
+## Features
+
+- Upload de arquivos `.log` e `.txt`
+- Parsing automático de múltiplos formatos (JSON, Apache, Syslog, Custom)
+- Busca avançada (contém, exato, regex, começa/termina com)
+- Filtro por nível de log (ERROR, WARN, INFO, DEBUG, TRACE)
+- Case sensitive toggle
+- Estatísticas em tempo real
+- Interface dark mode
+
+## Quick Start
+
+### Docker (Recomendado)
 
 ```bash
-# npm
+docker run -d -p 3000:3000 ghcr.io/rtorreson/log-viewer:latest
+```
+
+Acesse: http://localhost:3000
+
+### Desenvolvimento Local
+
+```bash
+# Instalar dependências
 npm install
 
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
+# Dev server
 npm run dev
 
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
+# Build
 npm run build
 
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
+# Preview build
+npm run preview
 ```
 
-Locally preview production build:
+## Docker Build Manual
 
 ```bash
-# npm
-npm run preview
+# Build da imagem
+docker build -t log-viewer .
 
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
+# Rodar container
+docker run -d -p 3000:3000 --name log-viewer log-viewer
 ```
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+## Configuração
+
+| Variável | Default | Descrição |
+|----------|---------|-----------|
+| `PORT` | `3000` | Porta do servidor |
+| `HOST` | `0.0.0.0` | Host do servidor |
+
+## Stack
+
+- [Nuxt 4](https://nuxt.com)
+- [Vue 3](https://vuejs.org)
+- [Nuxt UI](https://ui.nuxt.com)
+- [Tailwind CSS](https://tailwindcss.com)
+
+## Contribuindo
+
+Este projeto é **open source** e aberto a melhorias.
+
+1. Fork o repositório
+2. Crie uma branch (`git checkout -b feature/minha-feature`)
+3. Commit suas mudanças (`git commit -m 'Add feature'`)
+4. Push para a branch (`git push origin feature/minha-feature`)
+5. Abra um Pull Request
+
+## License
+
+MIT
+
